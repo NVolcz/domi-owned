@@ -104,6 +104,7 @@ class Enumerate(DomiOwned):
 				sys.exit()
 			except Exception as error:
 				self.logger.error('An error occurred while enumerating Domino URLs')
+				self.logger.error(error)
 				sys.exit()
 
 	async def query(self, session, urls):
@@ -126,3 +127,4 @@ class Enumerate(DomiOwned):
 				self.logger.warning("401 - {0}".format(url))
 			else:
 				return
+

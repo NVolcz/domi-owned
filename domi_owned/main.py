@@ -74,6 +74,8 @@ class DomiOwned(object):
 			else:
 				self.logger.error("Unable to find {0}/names.nsf?Open".format(url))
 				sys.exit()
+		elif response.status_code == 500:
+			auth_type = 'open'
 		else:
 			self.logger.error('Unable to determine authentication type')
 			sys.exit()
